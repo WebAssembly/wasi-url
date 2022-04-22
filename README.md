@@ -1,24 +1,16 @@
-# [Example WASI proposal]
+# WASI URLs
 
-This template can be used to start a new proposal, which can then be proposed in the WASI Subgroup meetings.
-
-The sections below are recommended. However, every proposal is different, and the community can help you flesh out the proposal, so don't block on having something filled in for each one of them.
-
-Thank you to the W3C Privacy CG for the [inspiration](https://github.com/privacycg/template)!
-
-# [Title]
-
-A proposed [WebAssembly System Interface](https://github.com/WebAssembly/WASI) API.
+A [WebAssembly System Interface](https://github.com/WebAssembly/WASI)
+API for URLs.
 
 ### Current Phase
 
-[Fill in the current phase, e.g. Phase 1]
+Phase 1
 
 ### Champions
 
-- [Champion 1]
-- [Champion 2]
-- [etc.]
+- George Kulakowski
+- Radu Matei
 
 ### Phase 4 Advancement Criteria
 
@@ -43,17 +35,37 @@ TODO before entering Phase 2.
 
 ### Introduction
 
-[The "executive summary" or "abstract". Explain in a few sentences what the goals of the project are, and a brief overview of how the solution works. This should be no more than 1-2 paragraphs.]
+URLs are a very common, standardized vocabulary and interchage
+type. This proposal defines a URL resource and operations on it.
 
 ### Goals [or Motivating Use Cases, or Scenarios]
 
-[What is the end-user need which this project aims to address?]
+#### Standard compliance
+
+This proposal will adhere to the [WHATWG URL spec][whatwg-url-spec].
+
+Concretely, this will mean using terminology as defined in that document.
+
+Besides the WHATWG specification, there are a series of IETF RFCs
+defining the syntax and semantics of URLs, as well as RFCs defining
+constraints for specific schemes. Furthermore, various browser, OS,
+and language standard library APIs define URL data types.
+
+The choice to use the WHATWG specification is deliberate. TODO WHY
 
 ### Non-goals
 
-[If there are "adjacent" goals which may appear to be in scope but aren't, enumerate them here. This section may be fleshed out as your design progresses and you encounter necessary technical and other trade-offs.]
+This proposal will not include constructors or accessors tailored to
+specific URL schemes defined by other RFCs, at least initially.
+
+This proposal makes a URL a resource type. The overhead of the
+resource abstraction is a cost that some use cases of URLs may not
+want to pay.
 
 ### API walk-through
+
+The WASI URL interface will contain a URL resource type and methods
+for creating and consuming URL resources.
 
 [Walk through of how someone would use this API.]
 
@@ -103,8 +115,17 @@ TODO before entering Phase 3.
 
 ### References & acknowledgements
 
+#### Specifications
+
+The [WHATWG URL spec][whatwg-url-spec] defines URLs, and an API that
+substantially informs this one.
+
+#### Thanks
+
 Many thanks for valuable feedback and advice from:
 
 - [Person 1]
 - [Person 2]
 - [etc.]
+
+[whatwg-url-spec]: https://url.spec.whatwg.org/
