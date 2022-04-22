@@ -10,6 +10,7 @@ Phase 1
 ### Champions
 
 - George Kulakowski
+- Radu Matei
 
 ### Phase 4 Advancement Criteria
 
